@@ -12,12 +12,18 @@ const jsUser={
     "email":"dinesh@google.com",
     [mySym]:"mykey1",
     isLoggin:true,
-    lastLogin:["monsday","sunday"]
+    lastLogin:["monday","sunday"]
 }
 
 console.log(jsUser["email"])
-console.log(typeof jsUser[mySym])
+console.log( jsUser[mySym])
 
 // console.log(jsUser["email"]);
+jsUser.email="dinesh@chatgpt.com"
+Object.freeze(jsUser)
+jsUser.email="dinesh@microsoft.com"
+console.log(jsUser);
+
+
 
 
