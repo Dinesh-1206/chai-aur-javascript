@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body style="background-color: black; color: white">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+  <script>
+    function addLanguage(LangName) {
+      const li = document.createElement("li");
+      li.innerHTML = `${LangName}`;
+      document.querySelector(".language").appendChild(li);
+    }
+    addLanguage("python");
+
+    function optiaddLang(LangName) {
+      const li = document.createElement("li");
+      const addText = document.createTextNode(LangName);
+      li.appendChild(addText);
+      document.querySelector(".language").appendChild(li);
+    }
+    optiaddLang("java");
+
+    //edit
+
+    const secLang = document.querySelector("li:nth-child(2)");
+    const newLi = document.createElement("li");
+    newLi.textContent = "dinu";
+    secLang.replaceWith(newLi);
+
+    //edit by outerHTML
+
+    const edit = document.querySelector("li:last-child");
+    edit.outerHTML = "<li>chai</li>";
+
+    //remove
+
+    const lastLang = document.querySelector("li:nth-child(3)");
+    lastLang.remove();
+  </script>
+</html>
